@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "prepare-media": "node scripts/prepare-media.mjs",
-    "render": "node scripts/render.mjs"
+    "render": "node scripts/render.mjs",
+    "render:admin": "node scripts/render-admin.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/archivo": "^5.3.0",

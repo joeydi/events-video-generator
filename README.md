@@ -35,6 +35,7 @@ Code as Video/
 | `npm run render` | Renders `out/loop.mp4` |
 | `npm run render -- --scale 2` | Renders 4K to `out/loop@2x.mp4` |
 | `npm run render -- --stills 0,30,60` | Writes single frames to `out/stills/` |
+| `npm run render:admin` | Renders the admin view itself as a 1920×1080 loop to `out/admin.mp4` (`--seconds`, `--scale` and `--stills` also work) |
 | `npm run prepare-media` | Normalizes clips into `.cache/` (rendering runs this automatically) |
 
 ## Admin view

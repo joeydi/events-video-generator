@@ -3,6 +3,8 @@ import { easings } from './morph.js';
 import { events } from './events.js';
 
 const $ = (id) => document.getElementById(id);
+// ?capture=N: frame-exact mode for scripts/render-admin.mjs (see admin-capture.js).
+const CAPTURE = Number(new URLSearchParams(location.search).get('capture')) || 0;
 const ASPECT_LABEL = { landscape: '16:9', portrait: '4:5' };
 const label = (key, short = false) => {
   const [id, aspect] = key.split('/');
@@ -29,7 +31,7 @@ const set = (o, path, val) => {
 
 let saved = await (await fetch('/api/config')).json();
 let cfg = structuredClone(saved);
-const stage = new Stage($('stage'), { mode: 'preview', config: cfg });
+const stage = new Stage($('stage'), { mode: CAPTURE ? 'render' : 'preview', config: cfg });
 await stage.init();
 window.__stage = stage;
 
@@ -179,6 +181,11 @@ function tick(now) {
       }
     }
   }
+  draw();
+  requestAnimationFrame(tick);
+}
+
+function draw() {
   stage.renderAt(clock.t, { playing: clock.playing, speed: clock.speed });
 
   const f = Math.floor(clock.t * cfg.fps + 1e-6) % frames();
@@ -191,7 +198,6 @@ function tick(now) {
   $('stateName').textContent = p > 0 ? `${label(A.key)} → ${label(B.key)}  ${Math.round(p * 100)}%` : label(A.key);
   document.querySelectorAll('#grid button').forEach((b) => b.classList.toggle('current', Number(b.dataset.index) === idx && p === 0));
   document.querySelectorAll('#segments .hold').forEach((h, i) => h.classList.toggle('current', i === idx));
-  requestAnimationFrame(tick);
 }
 
 // ---------- save / render ----------
@@ -254,7 +260,12 @@ buildTiming();
 buildGrid();
 applyConfig();
 fit();
-requestAnimationFrame(tick);
-fetch('/out/loop.mp4', { method: 'HEAD' }).then((r) => {
-  if (r.ok && (r.headers.get('content-type') || '').includes('video')) showReview('loop.mp4');
-});
+if (CAPTURE) {
+  const { installCapture } = await import('./admin-capture.js');
+  installCapture({ frames: CAPTURE, cfg, fields: FIELDS, set, stage, clock, applyConfig, draw });
+} else {
+  requestAnimationFrame(tick);
+  fetch('/out/loop.mp4', { method: 'HEAD' }).then((r) => {
+    if (r.ok && (r.headers.get('content-type') || '').includes('video')) showReview('loop.mp4');
+  });
+}
