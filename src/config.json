@@ -2,9 +2,9 @@
   "width": 1920,
   "height": 1080,
   "fps": 30,
-  "hold": 0.5,
-  "morph": 1,
-  "ease": "inOutQuart",
+  "hold": 0.25,
+  "morph": 1.25,
+  "ease": "inOutExpo",
   "stagger": 0.05,
   "sequence": [
     "disco/landscape",
@@ -15,14 +15,14 @@
     "disco/portrait"
   ],
   "card": {
-    "height": 968,
+    "height": 880,
     "radius": 12,
     "shadow": "0 40px 90px -20px rgba(6, 6, 28, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06)"
   },
   "background": {
-    "blur": 14,
-    "blurBoost": 31,
-    "brightness": 1,
+    "blur": 64,
+    "blurBoost": 0,
+    "brightness": 1.25,
     "saturate": 1.1,
     "scale": 1.18,
     "tint": "rgba(190, 185, 235, 0.14)"
