@@ -36,7 +36,7 @@ export function landscape(e) {
   const { accent, shadow } = vals(e);
   const s = { pt: 18, gap: 10, label: 18, value: 30, accent };
   return `
-<div class="artboard" style="width: 1920px; height: 1080px; position: relative; color: #f4f1ff; font-family: 'JetBrains Mono', monospace">
+<div class="artboard" style="width: 1920px; height: 1080px; position: relative; color: #f4f1ff; font-family: 'Cartograph', monospace">
   <div data-role="art" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px"></div>
 
   ${corners(48, 56)}
@@ -47,7 +47,7 @@ export function landscape(e) {
   </div>
 
   <div style="position: absolute; left: 120px; right: 120px; bottom: 112px; display: flex; flex-direction: column">
-    <div data-role="subtitle" style="align-self: flex-start; font-size: 72px; font-weight: 500; letter-spacing: -0.02em; color: #f4f1ff; text-shadow: 0 2px 18px rgba(20,18,50,0.95)"><span style="color: ${accent}">&gt;</span> ${esc(e.kicker)}</div>
+    <div data-role="subtitle" style="align-self: flex-start; font-size: 72px; font-weight: 500; letter-spacing: -0.02em; color: #f4f1ff; text-shadow: 0 2px 18px rgba(20,18,50,0.95)"><span style="color: ${accent}">&gt;</span> <span style="font-style: italic">${esc(e.kicker)}</span></div>
     <h1 style="align-self: flex-start; margin: 18px 0 0 -6px; font-size: 208px; line-height: 0.95; font-weight: 800; letter-spacing: -0.045em; color: #f4f1ff; text-shadow: ${shadow}; white-space: nowrap"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span> <span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span>${cursor(accent, 0.12, 40)}</h1>
     <div style="margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) auto; gap: 40px; align-items: end">
       ${meta('details-1', '01 / SPEAKER', e.speaker, s)}
@@ -66,7 +66,7 @@ export function portrait(e) {
   const bg = e.background;
   const s = { pt: 16, gap: 8, label: 16, value: 26, accent };
   return `
-<div class="artboard" style="width: 1080px; height: 1350px; position: relative; color: #f4f1ff; font-family: 'JetBrains Mono', monospace">
+<div class="artboard" style="width: 1080px; height: 1350px; position: relative; color: #f4f1ff; font-family: 'Cartograph', monospace">
   <div data-role="art" style="position: absolute; top: -130px; left: -571.11px; width: 2222.22px; height: 1250px"></div>
   <div data-role="art-fade" style="position: absolute; left: 0; width: 1080px; top: 1000px; height: 130px; background: linear-gradient(180deg, ${bg}00 0%, ${bg} 100%)"></div>
 
@@ -78,7 +78,7 @@ export function portrait(e) {
   </div>
 
   <div style="position: absolute; left: 80px; right: 80px; bottom: 104px; display: flex; flex-direction: column">
-    <div data-role="subtitle" style="align-self: flex-start; font-size: 62px; font-weight: 500; letter-spacing: -0.02em; color: #f4f1ff; text-shadow: 0 2px 18px rgba(20,18,50,0.95)"><span style="color: ${accent}">&gt;</span> ${esc(e.kicker)}</div>
+    <div data-role="subtitle" style="align-self: flex-start; font-size: 62px; font-weight: 500; letter-spacing: -0.02em; color: #f4f1ff; text-shadow: 0 2px 18px rgba(20,18,50,0.95)"><span style="color: ${accent}">&gt;</span> <span style="font-style: italic">${esc(e.kicker)}</span></div>
     <h1 style="align-self: flex-start; margin: 16px 0 0 -5px; font-size: 184px; line-height: 0.92; font-weight: 800; letter-spacing: -0.045em; color: #f4f1ff; text-shadow: ${shadow}"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block; white-space: nowrap"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span>${cursor(accent, 0.1, 36)}</span></h1>
     <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px">
       ${meta('details-1', '01 / SPEAKER', e.speaker, s)}

@@ -20,10 +20,11 @@ const ROLE_ORDER = [
 ];
 const STRETCH = new Set(['rule', 'panel-bg', 'art-fade']);
 const FONTS = [
+  '700 italic 100px gelica',
   '900 italic 100px Fraunces', '400 italic 50px Fraunces', '900 100px Fraunces',
   '600 22px Archivo', '800 24px Archivo',
-  '500 72px "JetBrains Mono"', '600 22px "JetBrains Mono"', '800 208px "JetBrains Mono"',
-  '900 220px Unbounded', '600 28px Unbounded', '400 36px Unbounded', '800 24px Unbounded',
+  '400 72px Cartograph', 'italic 400 72px Cartograph', '600 22px Cartograph', '800 208px Cartograph',
+  '900 220px Gamon', '700 220px Nippo', '600 28px Nippo', '400 36px Nippo',
   '700 28px Silkscreen', '400 20px Silkscreen',
 ];
 

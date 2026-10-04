@@ -32,7 +32,7 @@ export function landscape(e) {
 
   <div style="position: absolute; left: 120px; right: 120px; bottom: 96px; display: flex; flex-direction: column; gap: 0px">
     <div style="position: relative; align-self: flex-start">
-      <h1 style="margin: 0; font-family: 'Fraunces', serif; font-size: 268px; line-height: 0.9; font-weight: 900; font-style: ${fontStyle}; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.025em; color: #fff4e8; text-shadow: ${shadow}; padding-right: 40px; white-space: nowrap"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span> <span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></h1>
+      <h1 style="margin: 0; font-family: 'gelica', serif; font-size: 268px; line-height: 0.9; font-weight: 700; font-style: ${fontStyle}; letter-spacing: -0.025em; color: #fff4e8; text-shadow: ${shadow}; padding-right: 40px; white-space: nowrap"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span> <span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></h1>
       ${star(64, '#fff4e8', 'position: absolute; top: -28px; right: -24px', 'sparkle-1')}
       ${star(30, accent, 'position: absolute; top: 40px; right: -64px', 'sparkle-2')}
     </div>
@@ -68,7 +68,7 @@ export function portrait(e) {
 
   <div style="position: absolute; left: 80px; right: 80px; bottom: 80px; display: flex; flex-direction: column">
     <div style="position: relative; align-self: flex-start">
-      <h1 style="margin: 0; font-family: 'Fraunces', serif; font-size: 236px; line-height: 0.86; font-weight: 900; font-style: ${fontStyle}; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.025em; color: #fff4e8; text-shadow: ${shadow}; padding-right: 30px"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block; padding-left: 120px"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></span></h1>
+      <h1 style="margin: 0; font-family: 'gelica', serif; font-size: 236px; line-height: 0.86; font-weight: 700; font-style: ${fontStyle}; letter-spacing: -0.025em; color: #fff4e8; text-shadow: ${shadow}; padding-right: 30px"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block; padding-left: 120px"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></span></h1>
       ${star(58, '#fff4e8', 'position: absolute; top: -18px; right: 120px', 'sparkle-1')}
       ${star(28, accent, 'position: absolute; top: 46px; right: 82px', 'sparkle-2')}
     </div>

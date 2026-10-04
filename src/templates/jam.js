@@ -42,12 +42,12 @@ export function landscape(e) {
   const { accent, shadow } = vals(e);
   const info = [...e.days.map((d) => [d.label, `${d.day},`, d.date]), [e.where.label, `${e.where.place} ·`, e.where.town]];
   return `
-<div class="artboard" style="width: 1920px; height: 1080px; position: relative; color: #fff6ec; font-family: 'Unbounded', sans-serif">
+<div class="artboard" style="width: 1920px; height: 1080px; position: relative; color: #fff6ec; font-family: 'Nippo', sans-serif">
   <div data-role="art" style="position: absolute; left: 0; top: 0; width: 1920px; height: 1080px"></div>
 
   <div style="position: absolute; left: 120px; bottom: 96px; width: 1000px; display: flex; flex-direction: column">
     ${eyebrow(e, accent, 28, 14)}
-    <h1 style="align-self: flex-start; margin: 22px 0 0 -6px; font-size: 220px; line-height: 0.9; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; color: #fff6ec; text-shadow: ${shadow}"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></span></h1>
+    <h1 style="font-family: 'Gamon', sans-serif; align-self: flex-start; margin: 22px 0 0 -6px; font-size: 220px; line-height: 0.9; font-weight: 900; letter-spacing: 0; text-transform: uppercase; color: #fff6ec; text-shadow: ${shadow}"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></span></h1>
     <p data-role="subtitle" style="align-self: flex-start; margin: 34px 0 0 0; font-size: 36px; font-weight: 400; color: #fff6ec; text-shadow: 0 2px 14px rgba(14,16,44,0.9)">${esc(e.subtitle)}</p>
   </div>
 
@@ -79,13 +79,13 @@ export function portrait(e) {
   const bg = e.background;
   const info = [...e.days.map((d) => [d.label, d.day, d.date]), [e.where.label, e.where.place, e.where.town]];
   return `
-<div class="artboard" style="width: 1080px; height: 1350px; position: relative; color: #fff6ec; font-family: 'Unbounded', sans-serif">
+<div class="artboard" style="width: 1080px; height: 1350px; position: relative; color: #fff6ec; font-family: 'Nippo', sans-serif">
   <div data-role="art" style="position: absolute; top: -250px; left: -571.11px; width: 2222.22px; height: 1250px"></div>
   <div data-role="art-fade" style="position: absolute; left: 0; width: 1080px; top: 870px; height: 130px; background: linear-gradient(180deg, ${bg}00 0%, ${bg} 100%)"></div>
 
   <div style="position: absolute; left: 80px; right: 80px; bottom: 72px; display: flex; flex-direction: column">
     ${eyebrow(e, accent, 24, 12)}
-    <h1 style="align-self: flex-start; margin: 18px 0 0 -5px; font-size: 196px; line-height: 0.9; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; color: #fff6ec; text-shadow: ${shadow}"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></span></h1>
+    <h1 style="font-family: 'Gamon', sans-serif; align-self: flex-start; margin: 18px 0 0 -5px; font-size: 196px; line-height: 0.9; font-weight: 900; letter-spacing: 0; text-transform: uppercase; color: #fff6ec; text-shadow: ${shadow}"><span style="display: block"><span data-role="title-1" style="display: inline-block">${esc(e.title[0])}</span></span><span style="display: block"><span data-role="title-2" style="display: inline-block">${esc(e.title[1])}</span></span></h1>
     <p data-role="subtitle" style="align-self: flex-start; margin: 30px 0 0 0; font-size: 30px; font-weight: 400; color: #fff6ec">${esc(e.subtitle)}</p>
 
     <div style="position: relative; margin-top: 40px; box-sizing: border-box; padding: 30px; display: flex; flex-direction: column; gap: 24px">

@@ -43,3 +43,49 @@
   font-weight: 700;
   src: url(../node_modules/@fontsource/silkscreen/files/silkscreen-latin-700-normal.woff2) format('woff2');
 }
+/* Gelica (Disco headline), Cartograph CF (Data Science) and Nippo (Game Jam) aren't on npm — they use
+   the copies installed on this machine (Gelica via Adobe Fonts). Weights the designs use map to the nearest cut. */
+@font-face {
+  font-family: 'gelica';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Gelica-BoldItalic'), local('Gelica Bold Italic');
+}
+@font-face {
+  font-family: 'Cartograph';
+  font-style: normal;
+  font-weight: 400;
+  src: local('CartographCF-Regular');
+}
+@font-face {
+  font-family: 'Cartograph';
+  font-style: normal;
+  font-weight: 600;
+  src: local('CartographCF-DemiBold');
+}
+@font-face {
+  font-family: 'Cartograph';
+  font-style: normal;
+  font-weight: 800;
+  src: local('CartographCF-ExtraBold');
+}
+@font-face {
+  font-family: 'Cartograph';
+  font-style: italic;
+  font-weight: 400;
+  src: local('CartographCF-RegularItalic');
+}
+/* Variable, 200–700: the design's 800/900 weights top out at Bold. */
+@font-face {
+  font-family: 'Nippo';
+  font-style: normal;
+  font-weight: 200 700;
+  src: local('NippoVariable-Bold');
+}
+/* Game Jam headline: single weight (trial cut installed locally) — the range stops the browser faking bold. */
+@font-face {
+  font-family: 'Gamon';
+  font-style: normal;
+  font-weight: 100 900;
+  src: local('GamonTrial');
+}
