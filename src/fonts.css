@@ -1,0 +1,45 @@
+/* Self-hosted copies of the Google Fonts the design canvas uses, registered under the
+   same family names so the ported inline styles work unchanged (and renders work offline). */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(../node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2) format('woff2-variations');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url(../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2) format('woff2-variations');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url(../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-italic.woff2) format('woff2-variations');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  src: url(../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2) format('woff2-variations');
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 200 900;
+  src: url(../node_modules/@fontsource-variable/unbounded/files/unbounded-latin-wght-normal.woff2) format('woff2-variations');
+}
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../node_modules/@fontsource/silkscreen/files/silkscreen-latin-400-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../node_modules/@fontsource/silkscreen/files/silkscreen-latin-700-normal.woff2) format('woff2');
+}

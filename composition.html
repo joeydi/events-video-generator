@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Composition</title>
+<style>html, body { margin: 0; background: #000; overflow: hidden; }</style>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module">
+  import { Stage } from '/src/stage.js';
+  const params = new URLSearchParams(location.search);
+  const mode = params.get('mode') || 'preview';
+  const config = await (await fetch('/api/config')).json();
+  const stage = new Stage(document.getElementById('stage'), { mode, config });
+  await stage.init();
+  window.__stage = stage;
+  window.__seek = (n) => stage.renderFrame(n);
+  if (params.has('t')) stage.renderAt(Number(params.get('t')));
+  else if (mode === 'preview') {
+    const t0 = performance.now();
+    const tick = () => { stage.renderAt((performance.now() - t0) / 1000, { playing: true }); requestAnimationFrame(tick); };
+    tick();
+  }
+  window.__ready = true;
+</script>
+</body>
+</html>

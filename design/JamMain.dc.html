@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Game Jam — event cover</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Unbounded:wght@300..900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#fff6ec}a:hover{color:#ffffff}
+</style>
+</helmet>
+<div style="width: 1920px; height: 1080px; position: relative; overflow: hidden; background: #171c45; color: #fff6ec; font-family: 'Unbounded', sans-serif">
+<img src="/_blob/ca942881d77250ae3c462513337f1030" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+
+<div style="position: absolute; left: 120px; bottom: 96px; width: 1000px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 16px; font-family: 'Silkscreen', monospace; font-size: 28px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: {{accent}}; text-shadow: 0 2px 12px rgba(14,16,44,0.9)">
+<span style="display: flex; gap: 4px"><span style="width: 14px; height: 14px; background: #ff4fa3"></span><span style="width: 14px; height: 14px; background: #ffb340"></span><span style="width: 14px; height: 14px; background: #2fe0c0"></span></span>
+<span>Press start</span>
+</div>
+<h1 style="margin: 22px 0 0 -6px; font-size: 220px; line-height: 0.9; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; color: #fff6ec; text-shadow: {{shadow}}"><span style="display: block">Game</span><span style="display: block">Jam</span></h1>
+<p style="margin: 34px 0 0 0; font-size: 36px; font-weight: 400; color: #fff6ec; text-shadow: 0 2px 14px rgba(14,16,44,0.9)">Make a game in two days.</p>
+</div>
+
+<div style="position: absolute; right: 120px; bottom: 96px; width: 620px; box-sizing: border-box; padding: 36px; background: rgba(14, 16, 44, 0.86); border: 2px solid rgba(255, 246, 236, 0.18); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 6px">
+<span style="width: 22px; height: 22px; background: #ff4fa3"></span>
+<span style="width: 22px; height: 22px; background: #ff8a3d"></span>
+<span style="width: 22px; height: 22px; background: #ffd23f"></span>
+<span style="width: 22px; height: 22px; background: #2fe0c0"></span>
+<span style="width: 22px; height: 22px; background: #3aa8ff"></span>
+<span style="width: 22px; height: 22px; background: #a77bff"></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 20px; color: {{accent}}">Day 1</span>
+<span style="font-size: 28px; font-weight: 600">Friday, November 13</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 20px; color: {{accent}}">Day 2</span>
+<span style="font-size: 28px; font-weight: 600">Saturday, November 14</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 20px; color: {{accent}}">Where</span>
+<span style="font-size: 28px; font-weight: 600">The Den · Cabot, VT</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; column-gap: 32px; row-gap: 28px; margin-top: 8px">
+<div style="display: flex; align-items: center; gap: 16px; padding: 22px 32px 26px; background: {{accent}}; color: #12143a; box-shadow: inset 0 -6px 0 rgba(0,0,0,0.22), 8px 8px 0 #fff6ec; font-size: 24px; font-weight: 800; text-transform: uppercase; white-space: nowrap">
+<span>Join the jam</span>
+<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12H19M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"></path></svg>
+</div>
+<span style="font-family: 'Silkscreen', monospace; font-size: 20px; color: #fff6ec">harryshardwarevt.com</span>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#ff4fa3","options":["#ff4fa3","#ff8a3d","#2fe0c0","#3aa8ff","#a77bff"]},"headlineStyle":{"editor":"enum","default":"extrude","options":["extrude","glow","flat"]},"$preview":{"width":1920,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+const accent = this.props.accent ?? '#ff4fa3';
+const style = this.props.headlineStyle ?? 'extrude';
+let shadow = '0 6px 30px rgba(14,16,44,0.8)';
+if (style === 'extrude') {
+const steps = [];
+for (let i = 1; i <= 12; i++) steps.push(i + 'px ' + i + 'px 0 ' + accent);
+steps.push('18px 22px 36px rgba(10,10,40,0.7)');
+shadow = steps.join(', ');
+}
+if (style === 'glow') shadow = '0 4px 0 rgba(14,16,44,0.5), 0 0 40px ' + accent + '99, 0 0 120px ' + accent + '66';
+return { accent: accent, shadow: shadow };
+}
+}
+</script>
+</body>
+</html>

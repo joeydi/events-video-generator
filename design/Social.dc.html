@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Disco Night — Instagram post</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#fff4e8}a:hover{color:#ffffff}
+</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; position: relative; overflow: hidden; background: #1d1e40; color: #fff4e8; font-family: 'Archivo', sans-serif">
+<img src="/_blob/a71e2765d1471270389e2b589bb5f586" alt="" style="position: absolute; top: -130px; left: 50%; transform: translateX(-50%); height: 1250px; width: auto; max-width: none; display: block">
+<div style="position: absolute; left: 0; right: 0; top: 1000px; height: 130px; background: linear-gradient(180deg, rgba(29,30,64,0) 0%, #1d1e40 100%)"></div>
+
+<div style="position: absolute; top: 64px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 16px; font-size: 20px; font-weight: 600; font-stretch: 125%; letter-spacing: 0.32em; text-transform: uppercase">
+<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="color: {{accent}}"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+<span>EDC Colombia presents</span>
+<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="color: {{accent}}"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+</div>
+
+<div style="position: absolute; left: 80px; right: 80px; bottom: 80px; display: flex; flex-direction: column">
+<div style="position: relative; align-self: flex-start">
+<h1 style="margin: 0; font-family: 'Fraunces', serif; font-size: 236px; line-height: 0.86; font-weight: 900; font-style: {{fontStyle}}; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.025em; color: #fff4e8; text-shadow: {{shadow}}; padding-right: 30px"><span style="display: block">Disco</span><span style="display: block; padding-left: 120px">Night</span></h1>
+<svg width="58" height="58" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; top: -18px; right: 120px; color: #fff4e8"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; top: 46px; right: 82px; color: {{accent}}"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+</div>
+<p style="margin: 24px 0 0 6px; font-family: 'Fraunces', serif; font-size: 44px; font-style: italic; font-weight: 400; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 72; color: #fff4e8">with Dombresky</p>
+<div style="margin-top: 40px; padding-top: 32px; border-top: 2px solid rgba(255, 244, 232, 0.28); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 22px; font-size: 26px; font-weight: 600; font-stretch: 125%; letter-spacing: 0.12em; text-transform: uppercase">
+<span>Sat Oct 10 – Sun Oct 11, 2026</span>
+<span style="width: 9px; height: 9px; border-radius: 50%; background: {{accent}}"></span>
+<span>Medellín, Colombia</span>
+</div>
+<div style="align-self: flex-start; padding: 18px 36px; border-radius: 999px; background: {{accent}}; color: #1d1e40; font-size: 22px; font-weight: 800; font-stretch: 125%; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap">Tickets · dombresky.com</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#ff3d7f","options":["#ff3d7f","#ffb43a","#3ef0e0","#a98bff"]},"headlineStyle":{"editor":"enum","default":"glow","options":["glow","stacked"]},"italic":{"editor":"boolean","default":true},"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+renderVals() {
+const accent = this.props.accent ?? '#ff3d7f';
+const style = this.props.headlineStyle ?? 'glow';
+const italic = this.props.italic ?? true;
+const shadow = style === 'stacked'
+? '5px 5px 0 #ff3d7f, 10px 10px 0 #ffb43a, 15px 15px 0 #3ef0e0, 20px 20px 36px rgba(10,10,40,0.5)'
+: '0 3px 0 rgba(20,18,50,0.35), 0 0 32px ' + accent + '99, 0 0 110px ' + accent + '66';
+return { accent: accent, shadow: shadow, fontStyle: italic ? 'italic' : 'normal' };
+}
+}
+</script>
+</body>
+</html>

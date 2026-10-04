@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Science Meetup — event cover</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300..800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#f4f1ff}a:hover{color:#ffffff}
+</style>
+</helmet>
+<div style="width: 1920px; height: 1080px; position: relative; overflow: hidden; background: #1a1b3e; color: #f4f1ff; font-family: 'JetBrains Mono', monospace">
+<img src="/_blob/cef7c5fd603ceaed386f6d9ed17144ba" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+
+<div style="position: absolute; top: 48px; left: 48px; width: 56px; height: 56px; border-top: 3px solid #f4f1ff; border-left: 3px solid #f4f1ff"></div>
+<div style="position: absolute; top: 48px; right: 48px; width: 56px; height: 56px; border-top: 3px solid #f4f1ff; border-right: 3px solid #f4f1ff"></div>
+<div style="position: absolute; bottom: 48px; left: 48px; width: 56px; height: 56px; border-bottom: 3px solid #f4f1ff; border-left: 3px solid #f4f1ff"></div>
+<div style="position: absolute; bottom: 48px; right: 48px; width: 56px; height: 56px; border-bottom: 3px solid #f4f1ff; border-right: 3px solid #f4f1ff"></div>
+
+<div style="position: absolute; top: 80px; left: 120px; right: 120px; display: flex; justify-content: space-between; align-items: center">
+<div style="padding: 12px 20px; background: rgba(20, 18, 50, 0.78); border: 1px solid rgba(244, 241, 255, 0.35); font-size: 22px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">TEDx Talks</div>
+<div style="padding: 12px 20px; background: rgba(20, 18, 50, 0.78); border: 1px solid rgba(244, 241, 255, 0.35); font-size: 22px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase"><span style="color: {{accent}}">●</span> Featured talk</div>
+</div>
+
+<div style="position: absolute; left: 120px; right: 120px; bottom: 112px; display: flex; flex-direction: column">
+<div style="font-size: 72px; font-weight: 500; letter-spacing: -0.02em; color: #f4f1ff; text-shadow: 0 2px 18px rgba(20,18,50,0.95)"><span style="color: {{accent}}">&gt;</span> Demystifying</div>
+<h1 style="margin: 18px 0 0 -6px; font-size: 208px; line-height: 0.95; font-weight: 800; letter-spacing: -0.045em; color: #f4f1ff; text-shadow: {{shadow}}">Data Science<span style="display: inline-block; width: 0.48em; height: 0.74em; margin-left: 0.12em; background: {{accent}}; vertical-align: -0.02em; box-shadow: 0 0 40px {{accent}}"></span></h1>
+<div style="margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) auto; gap: 40px; align-items: end">
+<div style="border-top: 2px solid rgba(244, 241, 255, 0.35); padding-top: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 18px; font-weight: 600; letter-spacing: 0.2em; color: {{accent}}">01 / SPEAKER</span>
+<span style="font-size: 30px; font-weight: 600">Mr. Asitang Mishra</span>
+</div>
+<div style="border-top: 2px solid rgba(244, 241, 255, 0.35); padding-top: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 18px; font-weight: 600; letter-spacing: 0.2em; color: {{accent}}">02 / DATE</span>
+<span style="font-size: 30px; font-weight: 600">Jul 23, 2026</span>
+</div>
+<div style="display: flex; align-items: center; gap: 18px; padding: 24px 40px; background: {{accent}}; color: #1a1b3e; clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px); font-size: 26px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap">
+<span>Watch the talk · ted.com</span>
+<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12H19M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"></path></svg>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#ff4d8d","options":["#ff4d8d","#ffb347","#6ad8ff","#a98bff"]},"headlineStyle":{"editor":"enum","default":"glitch","options":["glitch","glow","flat"]},"$preview":{"width":1920,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+const accent = this.props.accent ?? '#ff4d8d';
+const style = this.props.headlineStyle ?? 'glitch';
+let shadow = '0 4px 24px rgba(20,18,50,0.7)';
+if (style === 'glitch') shadow = '-6px 0 0 ' + accent + ', 6px 0 0 #6ad8ff, 0 6px 30px rgba(20,18,50,0.8)';
+if (style === 'glow') shadow = '0 3px 0 rgba(20,18,50,0.4), 0 0 36px ' + accent + '99, 0 0 120px ' + accent + '66';
+return { accent: accent, shadow: shadow };
+}
+}
+</script>
+</body>
+</html>

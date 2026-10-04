@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Disco Night — event cover</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#fff4e8}a:hover{color:#ffffff}
+</style>
+</helmet>
+<div style="width: 1920px; height: 1080px; position: relative; overflow: hidden; background: #1d1e40; color: #fff4e8; font-family: 'Archivo', sans-serif">
+<img src="/_blob/a71e2765d1471270389e2b589bb5f586" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+
+<div style="position: absolute; top: 72px; right: 120px; display: flex; align-items: center; gap: 18px; font-size: 22px; font-weight: 600; font-stretch: 125%; letter-spacing: 0.32em; text-transform: uppercase">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="color: {{accent}}"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+<span>EDC Colombia presents</span>
+</div>
+
+<div style="position: absolute; left: 120px; right: 120px; bottom: 96px; display: flex; flex-direction: column; gap: 0px">
+<div style="position: relative; align-self: flex-start">
+<h1 style="margin: 0; font-family: 'Fraunces', serif; font-size: 268px; line-height: 0.9; font-weight: 900; font-style: {{fontStyle}}; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; letter-spacing: -0.025em; color: #fff4e8; text-shadow: {{shadow}}; padding-right: 40px">Disco Night</h1>
+<svg width="64" height="64" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; top: -28px; right: -24px; color: #fff4e8"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; top: 40px; right: -64px; color: {{accent}}"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="currentColor"></path></svg>
+</div>
+<p style="margin: 22px 0 0 8px; font-family: 'Fraunces', serif; font-size: 50px; font-style: italic; font-weight: 400; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 72; color: #fff4e8">with Dombresky</p>
+<div style="margin-top: 52px; padding-top: 36px; border-top: 2px solid rgba(255, 244, 232, 0.28); display: flex; align-items: center; justify-content: space-between; gap: 40px">
+<div style="display: flex; align-items: center; gap: 28px; font-size: 28px; font-weight: 600; font-stretch: 125%; letter-spacing: 0.14em; text-transform: uppercase">
+<span>Sat Oct 10 – Sun Oct 11, 2026</span>
+<span style="width: 10px; height: 10px; border-radius: 50%; background: {{accent}}"></span>
+<span>Medellín, Colombia</span>
+</div>
+<div style="padding: 20px 40px; border-radius: 999px; background: {{accent}}; color: #1d1e40; font-size: 24px; font-weight: 800; font-stretch: 125%; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap">Tickets · dombresky.com</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#ff3d7f","options":["#ff3d7f","#ffb43a","#3ef0e0","#a98bff"]},"headlineStyle":{"editor":"enum","default":"glow","options":["glow","stacked"]},"italic":{"editor":"boolean","default":true},"$preview":{"width":1920,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+const accent = this.props.accent ?? '#ff3d7f';
+const style = this.props.headlineStyle ?? 'glow';
+const italic = this.props.italic ?? true;
+const shadow = style === 'stacked'
+? '6px 6px 0 #ff3d7f, 12px 12px 0 #ffb43a, 18px 18px 0 #3ef0e0, 24px 24px 40px rgba(10,10,40,0.5)'
+: '0 3px 0 rgba(20,18,50,0.35), 0 0 36px ' + accent + '99, 0 0 120px ' + accent + '66';
+return { accent: accent, shadow: shadow, fontStyle: italic ? 'italic' : 'normal' };
+}
+}
+</script>
+</body>
+</html>
