@@ -67,7 +67,10 @@ try {
     const out = path.join(ROOT, 'out', scale === 1 ? 'admin.mp4' : `admin@${scale}x.mp4`);
     const ff = spawn('ffmpeg', [
       '-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(cfg.fps), '-i', '-',
-      '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p',
+      // Screenshots are sRGB: convert with the BT.709 matrix and tag the sRGB curve, or browsers and
+      // QuickTime decode with the wrong matrix and a BT.709 gamma lift and wash out saturated colors.
+      '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p,setparams=range=tv:colorspace=bt709:color_primaries=bt709:color_trc=iec61966-2-1',
+      '-c:v', 'libx264', '-preset', 'slow', '-crf', '16',
       '-movflags', '+faststart', '-r', String(cfg.fps), out,
     ], { stdio: ['pipe', 'inherit', 'inherit'] });
     const done = new Promise((res, rej) => ff.on('close', (c) => (c === 0 ? res() : rej(new Error(`ffmpeg exited ${c}`)))));
