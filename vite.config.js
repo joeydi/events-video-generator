@@ -55,5 +55,5 @@ function api() {
 export default defineConfig({
   plugins: [api()],
   server: { port: 5180, watch: { ignored: ['**/.cache/**', '**/out/**', '**/src/config.json'] } },
-  build: { rollupOptions: { input: { admin: 'index.html', composition: 'composition.html' } } },
+  build: { rollupOptions: { input: { admin: 'index.html', composition: 'composition.html', matrix: 'matrix.html' } } },
 });

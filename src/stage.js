@@ -19,7 +19,7 @@ const ROLE_ORDER = [
   'cta', 'url', 'corner-bl', 'corner-br',
 ];
 const STRETCH = new Set(['rule', 'panel-bg', 'art-fade']);
-const FONTS = [
+export const FONTS = [
   '700 italic 100px gelica',
   '900 italic 100px Fraunces', '400 italic 50px Fraunces', '900 100px Fraunces',
   '600 22px Archivo', '800 24px Archivo',

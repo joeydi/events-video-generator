@@ -1,0 +1,32 @@
+{
+  "width": 1920,
+  "padding": 32,
+  "gap": 28,
+  "rowGap": 28,
+  "events": ["disco", "data", "jam"],
+  "columns": [
+    { "kind": "landscape", "label": "Landscape", "detail": "1920 × 1080" },
+    { "kind": "portrait", "label": "Portrait", "detail": "1080 × 1350" },
+    { "kind": "background", "label": "Background" }
+  ],
+  "rowLabels": { "disco": "Disco Night", "data": "Data Science", "jam": "Game Jam" },
+  "labels": {
+    "columns": true,
+    "rows": false,
+    "rowWidth": 180,
+    "size": 17,
+    "gap": 24,
+    "color": "#f1e8e4",
+    "detailColor": "#b493a0"
+  },
+  "background": "#28252d",
+  "cell": {
+    "art": false,
+    "background": "#3f3644",
+    "border": "#57485b",
+    "radius": 0,
+    "shadow": "none"
+  },
+  "fps": 24,
+  "poster": 0
+}

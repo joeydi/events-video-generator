@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Matrix</title>
+<style>html, body { margin: 0; background: #000; overflow: hidden; }</style>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module">
+  import { Matrix } from '/src/matrix.js';
+  import config from '/src/matrix.json';
+  const params = new URLSearchParams(location.search);
+  const mode = params.get('mode') || 'preview';
+  const matrix = new Matrix(document.getElementById('stage'), { mode, config });
+  await matrix.init();
+  window.__matrix = matrix;
+  window.__size = matrix.size;
+  window.__seek = (n) => matrix.renderFrame(n);
+  if (mode === 'preview') {
+    // Fit the frame to the window.
+    const fit = () => (matrix.frame.style.transform = `scale(${Math.min(1, innerWidth / matrix.size.w)})`);
+    addEventListener('resize', fit);
+    fit();
+    if (params.has('t')) matrix.renderAt(Number(params.get('t')));
+    else {
+      const t0 = performance.now();
+      const tick = () => { matrix.renderAt((performance.now() - t0) / 1000, { playing: true }); requestAnimationFrame(tick); };
+      tick();
+    }
+  }
+  window.__ready = true;
+</script>
+</body>
+</html>
